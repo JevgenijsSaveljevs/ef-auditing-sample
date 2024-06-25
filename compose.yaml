@@ -1,0 +1,15 @@
+services:
+  flyway:
+    image: flyway/flyway
+    command: migrate -url='jdbc:sqlserver://db;databaseName=master;user=sa;password=P@ssw0rd123#;encrypt=false;' -connectRetries=160 
+    volumes:
+      - ./sql-migrations:/flyway/sql
+    depends_on:
+      - db
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=P@ssw0rd123#
+    ports:
+      - 1433:1433

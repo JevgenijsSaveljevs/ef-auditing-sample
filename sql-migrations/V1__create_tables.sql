@@ -30,6 +30,7 @@ CREATE TABLE dbo.Bicycle (
 INSERT INTO dbo.BicycleType (Code, [Name]) VALUES ('Gravel', 'Gravel')
 
 
+
 -- drop table dbo.BicycleType
 -- drop table dbo.BicycleComponent
 -- drop table dbo.Component
